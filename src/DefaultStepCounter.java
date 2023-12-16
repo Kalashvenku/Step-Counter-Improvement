@@ -73,8 +73,7 @@ public class DefaultStepCounter implements StepCounter {
         ArrayList<Double> mags = calculateMagnitudes(xAcc, yAcc, zAcc);
         int count = 0;
         boolean passedLower = true;
-        double threshold =0;
-        if (MainTester.threshold == 21){threshold = MainTester.threshold;}
+        double threshold = MainTester.threshold;
         double lowerThreshold = MainTester.lowerThreshold;
         for (double mag : mags){
             if (mag <= lowerThreshold){

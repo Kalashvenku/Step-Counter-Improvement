@@ -11,8 +11,12 @@ public class PlotViewer {
         DefaultStepCounter counter = new DefaultStepCounter();  /* instantiate your step counter here */
 
         ArrayList<Path> paths = MainTester.getPaths(TEST_FILE_FOLDER);
-
-        Path pathToPlot = paths.get(2);  // <-- file to plot
+        int plotPath = 0;
+        for(int i = 0; i < paths.size(); i++){
+            Path path = paths.get(i);
+            if (path.toString().contains("angad")){plotPath = i;}
+        }
+        Path pathToPlot = paths.get(plotPath);  // <-- file to plot
 
         System.out.println("Plotting data for: " + pathToPlot.toString());
         FileData data = MainTester.processPath(pathToPlot);

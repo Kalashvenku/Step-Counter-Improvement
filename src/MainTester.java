@@ -15,7 +15,7 @@ public class MainTester {
         ArrayList<Path> paths = getPaths(TEST_FILE_FOLDER);
 
         System.out.println("Filename \t\t\t\t prediction \t\t correct \t\t error");
-        threshold = 21;
+        threshold = 0;
         lowerThreshold =50;
         double totalError = 0;
         int count = 0;
@@ -60,8 +60,6 @@ public class MainTester {
                 prevMSError = totalError/count;
             }
             else{
-                System.out.println(totalError/count);
-                System.out.println(prevMSError);
                 changeThreshold = -changeThreshold;
                 changes++;
             }
